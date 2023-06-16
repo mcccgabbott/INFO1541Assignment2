@@ -1,4 +1,15 @@
 public final class HourlyEmployeeTest {
+
+    public static void main(String[] args) {
+        HourlyEmployeeTest tonyStark = new HourlyEmployeeTest("Tony", "Stark", 5749, "Service",
+                "Lead Service Manager", 32.85);
+        tonyStark.increaseHours(35);
+        double weeklyPay = tonyStark.calculateWeeklyPay();
+        System.out.println("Weekly pay: $" + weeklyPay);
+
+        double newWage = tonyStark.annualRaise();
+        System.out.println("New wage: $" + newWage);
+    }
     private double wage;
     private double hoursWorked;
 
@@ -41,14 +52,5 @@ public final class HourlyEmployeeTest {
         return newWage;
     }
 
-    public static void main(String[] args) {
-        HourlyEmployeeTest tonyStark = new HourlyEmployeeTest("Tony", "Stark", 5749, "Service",
-                "Lead Service Manager", 32.85);
-        tonyStark.increaseHours(35);
-        double weeklyPay = tonyStark.calculateWeeklyPay();
-        System.out.println("Weekly pay: $" + weeklyPay);
 
-        double newWage = tonyStark.annualRaise();
-        System.out.println("New wage: $" + newWage);
-    }
 }
