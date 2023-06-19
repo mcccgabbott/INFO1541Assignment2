@@ -9,6 +9,7 @@ public final class HourlyEmployeeTest {
 
         double newWage = tonyStark.annualRaise();
         System.out.println("New wage: $" + newWage);
+
     }
     private double wage;
     private double hoursWorked;
@@ -51,6 +52,5 @@ public final class HourlyEmployeeTest {
         wage = newWage; // Update the instance variable with the new wage
         return newWage;
     }
-
 
 }
