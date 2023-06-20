@@ -4,13 +4,10 @@ public final class CommissionEmployeeTest {
     private int id;
     private String department;
     private String jobTitle;
-    private double commissionRate;
+    public double commissionRate;
     private double sales;
 
-    public CommissionEmployeeTest(String clint, String barton, int i, String sales, String customerRepresentative, double v) {
-    }
-
-    public void CommissionEmployeeTest(String fn, String ln, int i, String dept, String job, double rate) {
+    public CommissionEmployeeTest(String fn, String ln, int i, String dept, String job, double rate) {
         firstName = fn;
         lastName = ln;
         id = i;
@@ -29,6 +26,9 @@ public final class CommissionEmployeeTest {
     public double getSales() {
         return sales;
     }
+    public double annualRaise() {
+        return commissionRate += 0.002;
+    }
 
     @Override
     public String toString() {
@@ -41,14 +41,20 @@ public final class CommissionEmployeeTest {
     }
 }
 
-class EmployeeCommission {
+class EmployeeCommissionTest {
     public static void main(String[] args) {
         CommissionEmployeeTest emp = new CommissionEmployeeTest("Clint", "Barton", 6847, "Sales",
                 "Customer Representative", 0.0265);
 
-        testIncreaseSales(emp, 500.0);
-        testIncreaseSales(emp, -200.0);
-        testIncreaseSales(emp, 1000.0);
+        testIncreaseSales(emp, + 500.0);
+        testIncreaseSales(emp, - 200);
+        testIncreaseSales(emp,  + 1000);
+
+        emp.annualRaise();
+        emp.annualRaise();
+
+        System.out.println("Updated Commission Rate: " + emp.commissionRate);
+
     }
 
     public static void testIncreaseSales(CommissionEmployeeTest emp, double amount) {
